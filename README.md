@@ -51,3 +51,14 @@ public class ExampleApp {
         calcSize(to);
     }
 }
+
+Example Result:
+Boolean, shallow=0, deep=0
+HashMap, shallow=48, deep=128
+HashMap, shallow=48, deep=152
+HashMap, shallow=48, deep=176
+ConcurrentHashMap, shallow=48, deep=208
+ConcurrentHashMap, shallow=48, deep=312
+ConcurrentHashMap, shallow=48, deep=416
+TestObject, shallow=16, deep=16
+TestObject, shallow=16, deep=32
