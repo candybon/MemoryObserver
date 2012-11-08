@@ -1,0 +1,1 @@
+java -javaagent:target/MemoryObserver-1.0.jar -cp target/MemoryObserver-1.0.jar example.ExampleApp

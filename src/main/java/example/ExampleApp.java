@@ -1,25 +1,29 @@
-MemoryObserver
-==============
+/*
+ * Copyright (c) XIAOWEI CHEN, 2009.
+ * All Rights Reserved. Reproduction in whole or in part is prohibited
+ * without the written consent of the copyright owner.
+ * 
+ * XIAOWEI CHEN MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF
+ * THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ * TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+ * PARTICULAR PURPOSE, OR NON-INFRINGEMENT. XIAOWEI CHEN SHALL NOT BE LIABLE FOR
+ * ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
+ * DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+ * 
+ * All rights reserved.
+ */
+package example;
 
-A neat JVM Memory Observer tool that allows for runtime calculation of the size of objects in memory. 
+import com.candybon.memory.MemoryObserver;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-==============
-This is a neat JVM Memory Observer that allows for runtime calculation of the size of objects in memory. 
-It act as complement to more expensive/complex Java profilers. It calculates shallow and deep sizes of object.
-
-The tool utilizes the instrumentation interfaces found in Sun API. It is configured in the startup of the JVM using the (-javaagent) argument. An example is illustrated in run.bat/.sh
-
-1. How to build it?
-Both Ant and Maven Script are provided to build this tool.
-run "ant" if you want to build it in Ant
-run "mvn install" if you want to build it in Ant
-
-2. How to run it?
-Run run.bat/.sh scripts to execute the example contained in the source code.
-
-3. Example of using it?
-example.ExampleApp.java
-
+/**
+ * Example on usage of the {@link MemoryObserver} utility.
+ * 
+ * @author XiaoweiChen
+ */
 public class ExampleApp {
 
     public static void calcSize(Object o) {

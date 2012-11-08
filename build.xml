@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+============================================
+Ant buidling for memory observer binaries.
+
+@author Xiaowei Chen 
+============================================
+-->
+<project name="MemoryObserver" default="post-clean">
+	<property name="buildLib" value="target" />
+	<property name="tempBuildLib" value="target/tmpBuild" />
+	<property name="jarFile" value="${buildLib}/MemoryObserver-1.0.jar" />
+
+	<target name="init">
+		<tstamp />
+		<mkdir dir="${buildLib}" />
+		<mkdir dir="${tempBuildLib}" />
+	</target>
+
+	<target name="compile" depends="pre-clean, init">
+		<javac source="1.5" target="1.5" destdir="${tempBuildLib}">
+			<src path="src/main/java" />
+		</javac>
+	</target>
+
+	<target name="pack" depends="compile">
+		<jar jarfile="${jarFile}" basedir="${tempBuildLib}">
+			<manifest>
+				<attribute name="Premain-Class" value="com.candybon.memory.MemoryObserver" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="pre-clean">
+		<delete dir="${tempBuildLib}" quiet="true"/>
+		<delete file="${jarFile}"/>
+	</target>
+
+	<target name="post-clean" depends="pack">
+		<delete dir="${tempBuildLib}" quiet="true"/>
+	</target>
+</project>
