@@ -1,7 +1,8 @@
-MemoryObserver
+MemoryObserver (JVM profiler complement)
 ==============
 
-A neat JVM Memory Observer tool that allows for runtime calculation of the size of objects in memory. 
+A neat JVM Observer tool that allows for runtime calculation of the size of objects in memory. 
+It act as JVM profiler complement
 
 ==============
 This is a neat JVM Memory Observer that allows for runtime calculation of the size of objects in memory. 
